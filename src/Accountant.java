@@ -1,7 +1,8 @@
-public class Accountant {
+public class Accountant extends BusinessEmployee {
 
     public Accountant(String name) {
         //Should start with a bonus budget of 0 and no team they are officially supporting
+        super(name);
     }
 
     public TechnicalLead getTeamSupported() {

@@ -1,7 +1,8 @@
-public class BusinessEmployee {
+public abstract class BusinessEmployee extends Employee {
 
     public BusinessEmployee(String name) {
         //Has a default salary of 50000
+        super(name, 50000);
     }
 
     public double getBonusBudget() {

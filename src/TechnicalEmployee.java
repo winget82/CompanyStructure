@@ -1,7 +1,8 @@
-public class TechnicalEmployee {
+public abstract class TechnicalEmployee extends Employee {
 
     public TechnicalEmployee(String name) {
         //Has a default base salary of 75000
+        super(name, 75000);
     }
 
     public String employeeStatus() {

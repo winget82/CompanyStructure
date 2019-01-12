@@ -1,7 +1,8 @@
-public class SoftwareEngineer {
+public class SoftwareEngineer extends TechnicalEmployee {
 
     public SoftwareEngineer(String name) {
         //Should start without access to code and with 0 code check ins
+        super(name);
     }
 
     public boolean getCodeAccess() {

@@ -1,8 +1,9 @@
-public class TechnicalLead {
+public class TechnicalLead extends TechnicalEmployee {
 
     public TechnicalLead(String name) {
         //Should create a new TechnicalLead that is a Manager. The TechnicalLead's base salary should be 1.3 times that
         //of a TechnicalEmployee. TechnicalLeads should have a default head count of 4.
+        super(name);
     }
 
     public boolean hasHeadCount() {

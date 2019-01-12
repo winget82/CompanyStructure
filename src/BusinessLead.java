@@ -1,8 +1,9 @@
-public class BusinessLead {
+public class BusinessLead extends BusinessEmployee {
 
     public BusinessLead(String name) {
         //Should create a new BusinessLead that is a Manager. The BusinessLead's base salary should be twice that of an
         //Accountant. They should start with a head count of 10.
+        super(name);
     }
 
     public boolean hasHeadCount() {
