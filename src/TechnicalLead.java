@@ -12,7 +12,7 @@ public class TechnicalLead extends TechnicalEmployee {
         super(name);
         this.manager = true;
         this.headCount = 4;
-        this.setBaseSalary(this.getBaseSalary() * 1.3);//THIS IS NOT CORRECT NOT WORKING AS INTENDED
+        this.setBaseSalary(this.getBaseSalary() * 1.3);
     }
 
     //BEHAVIORS

@@ -11,7 +11,7 @@ public class BusinessLead extends BusinessEmployee {
         //Accountant. They should start with a head count of 10.
         super(name);
         this.manager = true;
-        this.setBaseSalary(this.getBaseSalary() * 2);//THIS IS NOT CORRECT NOT WORKING AS INTENDED
+        this.setBaseSalary(this.getBaseSalary() * 2);
     }
 
     //BEHAVIORS
