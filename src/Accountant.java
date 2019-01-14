@@ -1,12 +1,14 @@
 public class Accountant extends BusinessEmployee {
-
+    //FIELDS
     private double budget;
 
+    //CONSTRUCTOR
     public Accountant(String name) {
         //Should start with a bonus budget of 0 and no team they are officially supporting
         super(name);
     }
-
+/*
+    //BEHAVIORS
     public TechnicalLead getTeamSupported() {
         //Should return a reference to the TechnicalLead that this Accountant is currently supporting. If they have not
         //been assigned a TechnicalLead null should be returned
@@ -25,7 +27,7 @@ public class Accountant extends BusinessEmployee {
         //supporting any team false should be returned.
         if (bonus > remainingBudget) {
             return false;
-        } else if (/*if the accountant is not supporting any team*/){
+        } else if (if the accountant is not supporting any team){
             return false;
         } else {
             return true;
@@ -37,5 +39,5 @@ public class Accountant extends BusinessEmployee {
         //currently managed budget and the name of the TechnicalLead they are currently supporting. Example: "1 Kasey
         //with a budget of 22500.0 is supporting Satya Nadella"
     }
-
+*/
 }

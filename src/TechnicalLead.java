@@ -1,15 +1,30 @@
 public class TechnicalLead extends TechnicalEmployee {
 
+    //FIELDS
+    private boolean manager;
+    private int headCount;
+    private int directReports;
+
+    //CONSTRUCTOR
     public TechnicalLead(String name) {
         //Should create a new TechnicalLead that is a Manager. The TechnicalLead's base salary should be 1.3 times that
         //of a TechnicalEmployee. TechnicalLeads should have a default head count of 4.
         super(name);
+        this.manager = true;
+        this.headCount = 4;
+        this.setBaseSalary(this.getBaseSalary() * 1.3);//THIS IS NOT CORRECT NOT WORKING AS INTENDED
     }
 
+    //BEHAVIORS
     public boolean hasHeadCount() {
         //Should return true if the number of direct reports this manager has is less than their headcount.
+        if (directReports < headCount) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
+/*
     public boolean addReport(SoftwareEngineer e) {
         //Should accept the reference to a SoftwareEngineer object, and if the TechnicalLead has head count left should
         //add this employee to their list of direct reports. If the employee is successfully added to the
@@ -35,5 +50,5 @@ public class TechnicalLead extends TechnicalEmployee {
         //no direct reports yet". If the TechnicalLead does have reports it might look something like "10 Kasey has 5
         //successful check ins and is managing: /n 5 Niky has 2 successful check ins"
     }
-
+*/
 }

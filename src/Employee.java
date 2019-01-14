@@ -15,9 +15,13 @@ public abstract class Employee {
     }
 
     //BEHAVIORS
-    public double getBaseSalary() {
+    public double getBaseSalary() {//GETTER
         //Should return the employee's current salary
         return baseSalary;
+    }
+
+    public void setBaseSalary(double x) {//SETTER
+        this.baseSalary = x;
     }
 
     public String getName() {
@@ -30,13 +34,13 @@ public abstract class Employee {
         //constructed. The first ever employee should have an ID of "1", the second "2" and so on
         return employeeID;
     }
-
+/*
     public Employee getManager() {
         //Should return a reference to the Employee object that represents this employee's manager
         //Business Lead is Manager of Accountant & Technical Lead is Manager of Software Engineer
 
     }
-
+*/
     public boolean equals(Employee other) {
         //Should return true if the two employee IDs are the same, false otherwise
         if (this.employeeID == other.employeeID) {
@@ -51,9 +55,9 @@ public abstract class Employee {
         //name. Example: "1 Kasey"
         return employeeID + " " + name;
     }
-
+/*
     abstract String employeeStatus();
         //Should return a String representation of that Employee's current status. This will be different for every
         //subclass of Employee
-
+*/
 }
