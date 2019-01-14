@@ -1,5 +1,7 @@
 public class Accountant extends BusinessEmployee {
 
+    private double budget;
+
     public Accountant(String name) {
         //Should start with a bonus budget of 0 and no team they are officially supporting
         super(name);
@@ -21,6 +23,13 @@ public class Accountant extends BusinessEmployee {
         //Should take in a suggested bonus amount and check if there is still enough room in the budget. If the bonus is
         //greater than the remaining budget, false should be returned, otherwise true. If the accountant is not
         //supporting any team false should be returned.
+        if (bonus > remainingBudget) {
+            return false;
+        } else if (/*if the accountant is not supporting any team*/){
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public String employeeStatus() {

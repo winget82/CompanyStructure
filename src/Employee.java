@@ -1,17 +1,20 @@
 public abstract class Employee {
-
+    //FIELDS
     private String name;
     private double baseSalary;
-    private static int employeeID = 0;
+    private static int IDcount = 1;
+    private int employeeID = 0;
 
+    //CONSTRUCTOR
     public Employee(String name, double baseSalary) {
         //Should construct a new employee object and take in two parameters, one for the name of the user and one for
         //their base salary
         this.name = name;
         this.baseSalary = baseSalary;
-        this.employeeID += 1;
+        this.employeeID = IDcount++;
     }
 
+    //BEHAVIORS
     public double getBaseSalary() {
         //Should return the employee's current salary
         return baseSalary;
@@ -30,10 +33,17 @@ public abstract class Employee {
 
     public Employee getManager() {
         //Should return a reference to the Employee object that represents this employee's manager
+        //Business Lead is Manager of Accountant & Technical Lead is Manager of Software Engineer
+
     }
 
     public boolean equals(Employee other) {
         //Should return true if the two employee IDs are the same, false otherwise
+        if (this.employeeID == other.employeeID) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public String toString() {
@@ -42,8 +52,8 @@ public abstract class Employee {
         return employeeID + " " + name;
     }
 
-    public String employeeStatus(){
+    abstract String employeeStatus();
         //Should return a String representation of that Employee's current status. This will be different for every
         //subclass of Employee
-    }
+
 }
