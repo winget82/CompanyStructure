@@ -17,15 +17,15 @@ public class SoftwareEngineer extends TechnicalEmployee {
         //Should return whether or not this SoftwareEngineer has access to make changes to the code base
         return codeAccess;
     }
-/*
-    public void setCodeAcess(boolean access) {//SETTER
-        //Should allow an external piece of code to update the SoftwareEngineer's code privileges to either true or false
 
+    public void setCodeAccess(boolean access) {//SETTER
+        //Should allow an external piece of code to update the SoftwareEngineer's code privileges to either true or false
+        this.codeAccess = access;
     }
-*/
+
     public int getSuccessfulCheckins() {
         //Should return the current count of how many times this SoftwareEngineer has successfully checked in code
-        return codeCheckIns;
+        return this.codeCheckIns;
     }
 /*
     public boolean checkInCode() {

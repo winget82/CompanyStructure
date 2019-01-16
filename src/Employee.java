@@ -55,9 +55,9 @@ public abstract class Employee {
         //name. Example: "1 Kasey"
         return employeeID + " " + name;
     }
-/*
+
     abstract String employeeStatus();
         //Should return a String representation of that Employee's current status. This will be different for every
         //subclass of Employee
-*/
+
 }
