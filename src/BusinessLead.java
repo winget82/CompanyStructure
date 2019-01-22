@@ -1,9 +1,11 @@
+import java.util.*;
+
 public class BusinessLead extends BusinessEmployee {
 
     //FIELDS
     private boolean manager;
     private int headCount;
-    private int directReports;
+    private ArrayList <SoftwareEngineer> directReports;
 
     //CONSTRUCTOR
     public BusinessLead(String name) {
@@ -12,12 +14,13 @@ public class BusinessLead extends BusinessEmployee {
         super(name);
         this.manager = true;
         this.setBaseSalary(this.getBaseSalary() * 2);
+        this.directReports = new ArrayList<>();
     }
 
     //BEHAVIORS
     public boolean hasHeadCount() {
         //Should return true if the number of direct reports this manager has is less than their headcount.
-        if (directReports < headCount) {
+        if (this.directReports.size() < headCount) {
             return true;
         } else {
             return false;

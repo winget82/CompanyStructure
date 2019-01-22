@@ -16,6 +16,7 @@ public abstract class BusinessEmployee extends Employee {
         //Should return a String representation of this BusinessEmployee that includes their ID, name and the size of
         //their currently managed budget. Example: "1 Kasey with a budget of 22500.0"
         return this.toString() + " with a budget of " + "NEED TO FINISH THIS";
+
         //NEED TO FINISH THIS
     }
 

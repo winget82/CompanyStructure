@@ -23,6 +23,7 @@ public class Accountant extends BusinessEmployee {
         //TechnicalLead plus 10%. For example, if the TechnicalLead supports 2 SoftwareEngineers, each with a salary of
         //75000, the Accountant's budget should be 150000 + 15000 for a total of 165000
         this.tech = lead;
+
         //NEED TO FINISH THIS ONE
     }
 /*
@@ -43,8 +44,11 @@ public class Accountant extends BusinessEmployee {
         //Should return a String representation of this Accountant that includes their ID, name, the size of their
         //currently managed budget and the name of the TechnicalLead they are currently supporting. Example: "1 Kasey
         //with a budget of 22500.0 is supporting Satya Nadella"
-        return this.toString() + " NEED TO FIGURE OUT BUDGET PART " + " is supporting " + this.tech;
-        //not sure why the final this.tech is returning tech.toString() from the looks of it
+        if (this.tech == null){
+            return this.toString() + " NEED TO FIGURE OUT BUDGET PART" + " is not currently supporting a Technical Lead.";
+        } else {
+            return this.toString() + " NEED TO FIGURE OUT BUDGET PART" + " is supporting " + this.tech.getName();
+        }
     }
 
 }
