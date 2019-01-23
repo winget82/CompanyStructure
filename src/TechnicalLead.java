@@ -38,15 +38,18 @@ public class TechnicalLead extends TechnicalEmployee {
         } else {
             return false;
         }
-
     }
 
-/*
     public boolean approveCheckIn(SoftwareEngineer e) {
         //Should see if the employee passed in does report to this manager and if their code access is currently set to
         //"true". If both those things are true, true is returned, otherwise false is returned
+        if (this.directReports.contains(e) && e.getCodeAccess()) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
+/*
     public boolean requestBonus(Employee, double bonus) {
         //Should check if the bonus amount requested would be approved by the BusinessLead supporting this
         //TechnicalLead. If it is, that employee should get that bonus and true should be returned. False should be

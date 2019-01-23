@@ -1,7 +1,7 @@
 public class Accountant extends BusinessEmployee {
     //FIELDS
     private double budget;
-    TechnicalLead tech = null;
+    private TechnicalLead tech = null;
 
     //CONSTRUCTOR
     public Accountant(String name) {
