@@ -43,10 +43,15 @@ public class TechnicalLead extends TechnicalEmployee {
         //Should see if the employee passed in does report to this manager and if their code access is currently set to
         //"true". If both those things are true, true is returned, otherwise false is returned
         if (this.directReports.contains(e) && e.getCodeAccess()) {
+            e.isApproved(true);
             return true;
         } else {
             return false;
         }
+    }
+
+    public ArrayList<SoftwareEngineer> getDirectReports(){
+        return this.directReports;
     }
 /*
     public boolean requestBonus(Employee, double bonus) {

@@ -1,6 +1,6 @@
 public class Accountant extends BusinessEmployee {
     //FIELDS
-    private double budget;
+    private double bonusBudget;
     private TechnicalLead tech;
 
     //CONSTRUCTOR
@@ -8,6 +8,7 @@ public class Accountant extends BusinessEmployee {
         //Should start with a bonus budget of 0 and no team they are officially supporting
         super(name);
         this.tech = null;
+        this.bonusBudget = 0;
     }
 
     //BEHAVIORS
@@ -24,7 +25,13 @@ public class Accountant extends BusinessEmployee {
         //75000, the Accountant's budget should be 150000 + 15000 for a total of 165000
         this.tech = lead;
 
-        //NEED TO FINISH THIS ONE - use for loop to loop through arraylist and add .getBaseSalary
+        for (int i=0; i<this.tech.getDirectReports().size(); i++){
+            this.bonusBudget+=this.tech.getDirectReports().get(i).getBaseSalary();
+        }
+
+        this.bonusBudget+= this.bonusBudget*.1;
+        System.out.println(this.bonusBudget);
+
     }
 /*
     public boolean approveBonus(double bonus) {
