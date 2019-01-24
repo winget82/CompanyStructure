@@ -4,6 +4,7 @@ public abstract class Employee {
     private double baseSalary;
     private static int IDcount = 1;
     private int employeeID = 0;
+    private Employee manager;
 
     //CONSTRUCTOR
     public Employee(String name, double baseSalary) {
@@ -12,6 +13,7 @@ public abstract class Employee {
         this.name = name;
         this.baseSalary = baseSalary;
         this.employeeID = IDcount++;
+        this.manager = null;
     }
 
     //BEHAVIORS
@@ -34,13 +36,17 @@ public abstract class Employee {
         //constructed. The first ever employee should have an ID of "1", the second "2" and so on
         return employeeID;
     }
-/*
+
     public Employee getManager() {
         //Should return a reference to the Employee object that represents this employee's manager
         //Business Lead is Manager of Accountant & Technical Lead is Manager of Software Engineer
-
+        return manager;
     }
-*/
+
+    public void setManager(Employee manager) {
+        this.manager = manager;
+    }
+
     public boolean equals(Employee other) {
         //Should return true if the two employee IDs are the same, false otherwise
         if (this.employeeID == other.employeeID) {

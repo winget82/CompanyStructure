@@ -3,7 +3,6 @@ import java.util.*;
 public class TechnicalLead extends TechnicalEmployee {
 
     //FIELDS
-    private boolean manager;
     private int headCount;
     private ArrayList <SoftwareEngineer> directReports;
 
@@ -12,7 +11,6 @@ public class TechnicalLead extends TechnicalEmployee {
         //Should create a new TechnicalLead that is a Manager. The TechnicalLead's base salary should be 1.3 times that
         //of a TechnicalEmployee. TechnicalLeads should have a default head count of 4.
         super(name);
-        this.manager = true;
         this.headCount = 4;
         this.setBaseSalary(this.getBaseSalary() * 1.3);
         this.directReports = new ArrayList<>();
@@ -34,6 +32,7 @@ public class TechnicalLead extends TechnicalEmployee {
         //TechnicalLead's direct reports true should be returned, false should be returned otherwise
         if (this.hasHeadCount()){
             this.directReports.add(e);
+            e.setManager(this);
             return true;
         } else {
             return false;

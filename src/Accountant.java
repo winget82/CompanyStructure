@@ -1,7 +1,7 @@
 public class Accountant extends BusinessEmployee {
     //FIELDS
     private double budget;
-    private TechnicalLead tech = null;
+    private TechnicalLead tech;
 
     //CONSTRUCTOR
     public Accountant(String name) {
@@ -24,7 +24,7 @@ public class Accountant extends BusinessEmployee {
         //75000, the Accountant's budget should be 150000 + 15000 for a total of 165000
         this.tech = lead;
 
-        //NEED TO FINISH THIS ONE
+        //NEED TO FINISH THIS ONE - use for loop to loop through arraylist and add .getBaseSalary
     }
 /*
     public boolean approveBonus(double bonus) {

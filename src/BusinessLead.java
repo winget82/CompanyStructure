@@ -3,16 +3,14 @@ import java.util.*;
 public class BusinessLead extends BusinessEmployee {
 
     //FIELDS
-    private boolean manager;
     private int headCount;
-    private ArrayList <SoftwareEngineer> directReports;
+    private ArrayList <Accountant> directReports;
 
     //CONSTRUCTOR
     public BusinessLead(String name) {
         //Should create a new BusinessLead that is a Manager. The BusinessLead's base salary should be twice that of an
         //Accountant. They should start with a head count of 10.
         super(name);
-        this.manager = true;
         this.setBaseSalary(this.getBaseSalary() * 2);
         this.directReports = new ArrayList<>();
     }
