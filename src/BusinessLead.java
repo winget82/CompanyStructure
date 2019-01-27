@@ -4,6 +4,7 @@ public class BusinessLead extends BusinessEmployee {
 
     //FIELDS
     private int headCount;
+    private Accountant acct;
     private ArrayList <Accountant> directReports;
 
     //CONSTRUCTOR
@@ -13,6 +14,7 @@ public class BusinessLead extends BusinessEmployee {
         super(name);
         this.setBaseSalary(this.getBaseSalary() * 2);
         this.directReports = new ArrayList<>();
+        this.headCount = 10;
     }
 
     //BEHAVIORS
@@ -24,7 +26,7 @@ public class BusinessLead extends BusinessEmployee {
             return false;
         }
     }
-/*
+
     public boolean addReport(Accountant e, TechnicalLead supportTeam) {
         //Should accept the reference to an Accountant object, and if the BusinessLead has head count left should add
         //this employee to their list of direct reports. If the employee is successfully added to the BusinessLead's
@@ -32,8 +34,20 @@ public class BusinessLead extends BusinessEmployee {
         //BusinessLead's bonus budget should be increased by 1.1 times that new employee's base salary. That employee's
         //team they are supporting should be updated to reflect the reference to the TechnicalLead given. If the
         //employee is successfully added true should be returned, false otherwise.
-    }
+        this.acct = e;
+        if (this.hasHeadCount()) {
+            this.directReports.add(e);
+            e.setManager(this);
+            double newBudget = this.getBonusBudget() + (1.1 * e.getBaseSalary());
+            this.setBonusBudget(newBudget);
+            e.supportTeam(supportTeam);
+            return true;
+        } else {
+            return false;
+        }
 
+    }
+/*
     public boolean requestBonus(Employee, double bonus) {
         //Should check if the bonus amount requested would fit in current BusinessLead's budget. If it is, that employee
         //should get that bonus, the BusinessLeader's budget should be deducted and true should be returned. False
@@ -47,4 +61,32 @@ public class BusinessLead extends BusinessEmployee {
         //true returned, false otherwise
     }
 */
+    public String getTeamStatus() {
+        if (this.directReports.size() == 0) {
+            return this.employeeStatus() + "and no direct reports yet.";
+        } else {
+            String teamStatus[] = new String[directReports.size()];
+            for (int i = 0; i < this.directReports.size(); i++) {
+                teamStatus[i] = this.directReports.get(i).employeeStatus() + "\n";
+            }
+            String finished = "";
+            for (int i = 0; i < teamStatus.length; i++) {
+                finished += teamStatus[i];
+            }
+
+            String x =  this.employeeStatus() + " and is managing: \n" + Arrays.toString(teamStatus);
+            x = x.replace("[", "");
+            x = x.replace("]","");
+            x = x.replace(",","");
+            String finalString = x.trim();
+            return finalString;
+        }
+    }
+
+    public String employeeStatus() {
+        //Should return a String representation of this BusinessEmployee that includes their ID, name and the size of
+        //their currently managed budget. Example: "1 Kasey with a budget of 22500.0"
+        return this.toString() + " with a budget of " + this.getBonusBudget();
+    }
+
 }

@@ -22,8 +22,8 @@ public abstract class Employee {
         return baseSalary;
     }
 
-    public void setBaseSalary(double x) {//SETTER
-        this.baseSalary = x;
+    public void setBaseSalary(double salary) {//SETTER
+        this.baseSalary = salary;
     }
 
     public String getName() {

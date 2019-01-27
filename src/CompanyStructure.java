@@ -27,10 +27,10 @@ public class CompanyStructure {
         BusinessLead CFO = new BusinessLead("Amy Hood");
         Accountant actA = new Accountant("Niky");
         Accountant actB = new Accountant("Andrew");
-        /*
+
         CFO.addReport(actA, CTO);
         CFO.addReport(actB, VPofENG);
         System.out.println(CFO.getTeamStatus());
-        */
+
     }
 }

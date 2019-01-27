@@ -79,7 +79,7 @@ public class TechnicalLead extends TechnicalEmployee {
             for (int i = 0; i < teamStatus.length; i++) {
                 finished += teamStatus[i];
             }
-            //return this.employeeStatus() + " and is managing: \n" + Arrays.toString(teamStatus);
+
             String x =  this.employeeStatus() + " and is managing: \n" + Arrays.toString(teamStatus);
             x = x.replace("[", "");
             x = x.replace("]","");
