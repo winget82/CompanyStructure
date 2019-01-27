@@ -41,26 +41,59 @@ public class BusinessLead extends BusinessEmployee {
             double newBudget = this.getBonusBudget() + (1.1 * e.getBaseSalary());
             this.setBonusBudget(newBudget);
             e.supportTeam(supportTeam);
+            supportTeam.setBusinessLead(this);
             return true;
         } else {
             return false;
         }
-
     }
-/*
-    public boolean requestBonus(Employee, double bonus) {
+
+    public boolean requestBonus(Employee employee, double bonus) {
         //Should check if the bonus amount requested would fit in current BusinessLead's budget. If it is, that employee
         //should get that bonus, the BusinessLeader's budget should be deducted and true should be returned. False
         //should be returned otherwise
+        if (bonus <= this.getBonusBudget()) {
+            this.setBonusBudget(this.getBonusBudget() - bonus);
+            approveBonus(employee, bonus);
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public boolean approveBonus(Employee, double bonus) {
+    public boolean approveBonus(Employee employee, double bonus) {
         //This function should look through the Accountants the BusinessLead manages, and if any of them are supporting
-        //a the TechnicalLead that is the manager of the Employee passed in then the Accountant's budget should be
-        //consulted to see if the bonus could be afforded. If the team can afford the bonus it should be rewarded and
-        //true returned, false otherwise
+        //a TechnicalLead that is the manager of the Employee passed in then the Accountant's (CHANGED TO BUSINESS
+        //LEAD'S - SEE COMMENT BELOW) budget should be consulted to see if the bonus could be afforded. If the team can
+        //afford the bonus it should be rewarded and true returned, false otherwise
+        boolean approved = false;
+
+        for (int i = 0; i < this.directReports.size(); i++) {
+            if (this.directReports.get(i).getTeamSupported().getName().equals(employee.getManager())) {
+
+                /*THE ACCOUNTANT'S BUDGET SHOULD BE CONSULTED TO SEE IF THE BONUS CAN BE AFFORDED
+                LOGICALLY THIS SEEMS WRONG. EVENTUALLY THIS WOULD CAUSE A PROBLEM WITH THE BUDGET?
+                IT SEEMS LIKE THE BUSINESS LEADS BUDGET SHOULD BE CONSULTED SINCE THAT IS WHERE MONEY IS BEING DEDUCTED.
+                OR THE MONEY SHOULD BE DEDUCTED FROM THE ACCOUNTANTS BONUS BUDGET INSTEAD OF THE BUSINESS LEAD'S.
+                THAT OR THERE SHOULD BE A STATIC BONUS BUDGET THAT IS SHARED BY ALL BUSINESS EMPLOYEES.  I MUST BE
+                MISUNDERSTANDING WHAT THEY ARE WANTING OR THERE IS A MISTYPE IN THEIR REQUIREMENTS...  I DECIDED TO
+                PROCEED BY COMPARING IT TO THE BUSINESS LEAD'S BONUS BUDGET SINCE THAT IS WHERE IT IS BEING DEDUCTED
+                FROM*/
+
+                if (bonus <= this.getBonusBudget()) {
+                    approved = true;
+                } else {
+                    approved = false;
+                }
+
+            } else {
+                approved = false;
+            }
+        }
+
+        return approved;
     }
-*/
+
     public String getTeamStatus() {
         if (this.directReports.size() == 0) {
             return this.employeeStatus() + "and no direct reports yet.";
@@ -88,5 +121,4 @@ public class BusinessLead extends BusinessEmployee {
         //their currently managed budget. Example: "1 Kasey with a budget of 22500.0"
         return this.toString() + " with a budget of " + this.getBonusBudget();
     }
-
 }

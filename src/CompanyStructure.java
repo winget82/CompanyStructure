@@ -31,6 +31,5 @@ public class CompanyStructure {
         CFO.addReport(actA, CTO);
         CFO.addReport(actB, VPofENG);
         System.out.println(CFO.getTeamStatus());
-
     }
 }

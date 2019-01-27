@@ -4,6 +4,7 @@ public class TechnicalLead extends TechnicalEmployee {
 
     //FIELDS
     private int headCount;
+    private BusinessLead bLead;
     private ArrayList <SoftwareEngineer> directReports;
 
     //CONSTRUCTOR
@@ -14,6 +15,7 @@ public class TechnicalLead extends TechnicalEmployee {
         this.headCount = 4;
         this.setBaseSalary(this.getBaseSalary() * 1.3);
         this.directReports = new ArrayList<>();
+        this.bLead = null;
     }
 
     //BEHAVIORS
@@ -53,13 +55,18 @@ public class TechnicalLead extends TechnicalEmployee {
     public ArrayList<SoftwareEngineer> getDirectReports(){
         return this.directReports;
     }
-/*
-    public boolean requestBonus(Employee, double bonus) {
+
+    public boolean requestBonus(Employee employee, double bonus) {
         //Should check if the bonus amount requested would be approved by the BusinessLead supporting this
         //TechnicalLead. If it is, that employee should get that bonus and true should be returned. False should be
         //returned otherwise
+        if (this.bLead.requestBonus(employee, bonus)) {
+            return true;
+        } else {
+            return false;
+        }
     }
-*/
+
     public String getTeamStatus() {
         //Should return a String that gives insight into this Manager and all their direct reports. It should return a
         //string that is a combination of the TechnicalLead's employee status followed by each of their direct
@@ -87,5 +94,13 @@ public class TechnicalLead extends TechnicalEmployee {
             String finalString = x.trim();
             return finalString;
         }
+    }
+
+    public BusinessLead getBusinessLead() {
+        return this.bLead;
+    }
+
+    public void setBusinessLead(BusinessLead bLead) {
+        this.bLead = bLead;
     }
 }

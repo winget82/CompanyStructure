@@ -16,5 +16,4 @@ public abstract class TechnicalEmployee extends Employee {
         //successful check ins they have had. Example: "1 Kasey has 10 successful check ins"
         return this.toString() + " has " + this.codeCheckIns + " successful check ins";
     }
-
 }

@@ -30,7 +30,6 @@ public class Accountant extends BusinessEmployee {
         }
 
         this.setBonusBudget(this.getBonusBudget() + (this.getBonusBudget()*.1));
-
     }
 
     public boolean approveBonus(double bonus) {
@@ -56,5 +55,4 @@ public class Accountant extends BusinessEmployee {
             return this.toString() + " with a budget of " + this.getBonusBudget() + " is supporting " + this.tech.getName();
         }
     }
-
 }
